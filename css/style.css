@@ -1,0 +1,32 @@
+.navbar-brand{
+    position: absolute;
+    top: -5px;
+}
+
+.navbar-toggler{
+    position: absolute;
+    right: 0px;
+}
+
+.nav-link > span{
+    color: white;
+}
+
+@media only screen and (min-width: 768px){
+    .navbar-collapse{
+        position: absolute;
+        right: 20px;
+    }
+
+    ul.navbar-nav > .nav-item{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .navbar-collapse{
+        position: absolute;
+        top: 60px;
+    }
+}
