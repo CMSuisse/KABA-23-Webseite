@@ -12,13 +12,30 @@
     color: white;
 }
 
+.current{
+    background-color: red;
+    border-radius: 10px;
+}
+
+.sponsor-main img{
+    display: block;
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.sponsor-co img {
+    display: block;
+    max-width: 200px;
+    max-height: 100px;
+}
+
 @media only screen and (min-width: 768px){
     .navbar-collapse{
         position: absolute;
         right: 20px;
     }
 
-    ul.navbar-nav > .nav-item{
+    .nav-item{
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -26,7 +43,22 @@
 
 @media only screen and (max-width: 767px){
     .navbar-collapse{
+        width: 100%;
         position: absolute;
         top: 60px;
+        background-color: #212529;
+    }
+
+    .nav-item{
+        margin: 5px 0px;
+    }
+
+    .nav-item > .nav-link{
+        padding-left: 5px;
+    }
+
+    footer > .container-fluid{
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
