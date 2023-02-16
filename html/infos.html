@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>KABA 23 Infos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../media/img/logo_transparent.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!--This container is used to not mess up the document flow when the page loads, because the navbar is removed from the flow due to it having a fixed position-->
+    <div class="container" id="navbarContainer" style="height: 60px;">
+      <!--The navbar is always stuck to the top of the view port and collapses into a hamburger menu at the md breakpoint-->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height:60px;">
+          <a class="navbar-brand" href="home.html"><img type="image/png" src="../media/img/logo_transparent.png" style="height:60px;"></a>
+          <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" onclick=updateNavbar() style="right: 10px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse"  id="navbarCollapse">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="home.html"><span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link current text-white" href=""><span>Infos</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="team.html"><span>Über uns</span></a>
+                </li>
+              </ul>
+          </div>
+      </nav>
+    </div>
+    <main>
+      <div class="placeholder" style="padding-bottom: 500px;">
+        Placeholder
+      </div>
+    </main>
+    <!--The identical footer on all pages contains a quick list of sponsors, contact links and a quick imprint-->
+    <footer class="footer">
+      <!--Bootstrap grid go brrrrrrrr-->
+      <div class="container-fluid">
+        <div class="row pt-3">
+          <div class="col m-auto">
+            <h5 class="text-uppercase" style="text-align: center;">Hauptsponsoren</h5>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-auto sponsor-main mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+          <div class="col-auto sponsor-main mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+          <div class="col-auto sponsor-main mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+          <div class="col-auto sponsor-main mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col m-auto">
+            <h5 class="text-uppercase" style="text-align: center;">Co-Sponsoren</h5>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-auto sponsor-co mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+          <div class="col-auto sponsor-co mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+          <div class="col-auto sponsor-co mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+          <div class="col-auto sponsor-co mt-2 mb-2">
+            <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
+          </div>
+        </div>
+        <div class="row row-cols-md-2">
+          <div class="row row-cols-1">
+            <h5 class="text-uppercase" style="text-align: center;">Weitere Sponsoren</h5>
+            <div class="col d-flex justify-content-center">
+              <a href="#" class="text-white">Placeholder</a>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <a href="#" class="text-white">Placeholder</a>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <a href="#" class="text-white">Placeholder</a>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <a href="#" class="text-white">Placeholder</a>
+            </div>
+          </div>
+          <div class="row row-cols-1">
+            <h5 class="text-uppercase mt-2 mt-md-0 text-center">Kontakt</h5>
+            <div class="col d-flex justify-content-center">
+              <span>KABA Chefin: <a class="text-white" href="mailto: placeholder@place.holder">placeholder@place.holder</a></span>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <span>Insta: <a class="text-white" href="https://www.instagram.com/kaba.2023.gl" target="_blank">kaba.2023.gl</a></span>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <span>Webseite: <a class="text-white" href="mailto: cyrill.marti@stud.schulegl.ch">cyrill.marti@stud.schulegl.ch</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="row row-cols-1 justify-content-center mt-2 py-2 imprint">
+          <div class="col-auto text-center">
+            <span>Webseite von Cyrill Marti</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="../js/navbarController.js"></script>
+  </body>
+</html>
