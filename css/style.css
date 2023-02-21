@@ -1,6 +1,6 @@
 body{
-    background-color: #111111;
-    color: white;
+    background-color: #0d0000;
+    color:#f2f2f2;
 }
 
 footer{
@@ -15,6 +15,14 @@ footer{
 .navbar-toggler{
     position: absolute;
     right: 0px;
+}
+
+.nav-link{
+    border-radius: 10px;
+}
+
+.nav-link:hover{
+    background-color: rgba(255, 0, 0, 0.3);
 }
 
 .current{
@@ -36,6 +44,15 @@ footer{
 
 .imprint{
     background-color: #181818;
+}
+
+.info-card{
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+.logo{
+    max-width: 100%;
 }
 
 @media only screen and (min-width: 768px){
