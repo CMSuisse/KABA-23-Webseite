@@ -1,3 +1,9 @@
+/*I know that Bootstrap is a very powerful tool,
+however, on this webpage there are features that are supposed to have
+a uniform appearance on every page that the user is on, like the navbar and footer.
+That's why I'm still using css to style these elements of the page in one location to affect
+every page simultaneously*/
+
 body{
     background-color: #0d0000;
     color:#f2f2f2;
@@ -47,24 +53,37 @@ footer{
 }
 
 .info-card{
-    background-color: #333333;
+    background-color: #1d1d1d;
     border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1300px;
+    margin: auto;
 }
 
-.logo{
-    max-width: 100%;
+.logo-card{
+    background-color: #0d0000;
 }
 
-@media only screen and (min-width: 768px){
-    .navbar-collapse{
-        position: absolute;
-        right: 20px;
-    }
+.trailer-placeholder{
+    padding-bottom: calc(calc(100%/16)*9);
+}
 
-    .nav-item{
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+.act-image{
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.navbar-collapse{
+    position: absolute;
+    right: 20px;
+}
+
+.nav-item{
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 @media only screen and (max-width: 767px){
