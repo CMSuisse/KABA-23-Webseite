@@ -25,10 +25,24 @@ footer{
 
 .nav-link{
     border-radius: 10px;
+    margin-top: 4px;
 }
 
 .nav-link:hover{
     background-color: rgba(255, 0, 0, 0.3);
+}
+
+.insta-link .bi-instagram{
+    font-size: 32px;
+}
+
+.insta-link{
+    padding: 0;
+    color: white;
+}
+
+.insta-link:hover{
+    color: rgba(255, 0, 0, 0.5);
 }
 
 .current{
@@ -123,14 +137,16 @@ footer{
         width: 100%;
         position: absolute;
         top: 60px;
+        right: 0px;
         background-color: #212529;
     }
 
     .nav-item{
-        margin: 5px;
+        padding: 0px 5px;
     }
 
     .nav-item > .nav-link{
+        margin-top: 0;
         padding-left: 5px;
     }
 
