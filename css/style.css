@@ -132,6 +132,18 @@ footer{
     border-bottom: 2px solid white
 }
 
+.submit-journey-form{
+    color: #f2f2f2;
+    background-color: #212529;
+    border-color: #212529;
+    transition: background-color 500ms, background-color 500ms;
+}
+
+.submit-journey-form:hover{
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
 @media only screen and (max-width: 767px){
     .navbar-collapse{
         width: 100%;

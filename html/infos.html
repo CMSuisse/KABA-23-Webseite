@@ -15,7 +15,7 @@
     <div class="container" id="navbarContainer" style="height: 60px;">
       <!--The navbar is always stuck to the top of the view port and collapses into a hamburger menu at the md breakpoint-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
-          <a class="navbar-brand" href=""><img type="image/png" src="../media/img/logo_transparent.png" style="height: 60px;"></a>
+          <a class="navbar-brand" href="home.html"><img type="image/png" src="../media/img/logo_transparent.png" style="height: 60px;"></a>
           <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" onclick=updateNavbar() style="right: 10px;">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,7 +39,45 @@
     </div>
     <main class="mx-1 mx-md-5">
       <div class="placeholder" style="padding-bottom: 500px;">
-        Placeholder
+        <div class="info-card my-3">
+          <h2>Fahrplan</h2>
+          <!--The bootstrap grid system goes brrrr once again-->
+          <form class="journey-form"></form>
+            <div class="container-fluid p-0">
+              <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                    <label for="starting-point">Von:</label>
+                    <input type="text" id="starting-point" class="form-control bg-dark text-white" value="Glarus, Bahnhof">
+                </div>
+                <div class="col">
+                  <label for="destination">Nach:</label>
+                  <input type="text" id="destination" class="form-control bg-dark text-white">
+                </div>
+              </div>
+              <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                  <label for="date">Datum:</label>
+                  <input type="date" id="date" class="form-control bg-dark text-white" value="2023-04-28">
+                </div>
+                <div class="col">
+                  <label for="time">Zeit:</label>
+                  <input type="time" id="time" class="form-control bg-dark text-white" value="22:00">
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col">
+                  <input type="radio" name="isDepartureTime" value="true" checked="checked" id="departure">
+                  <label for="departure">Abfahrt</label>
+                  <input type="radio" name="isDepartureTime" value="false" id="arrival">
+                  <label for="arrival">Ankunft</label>
+                </div>
+              </div>
+              <div class="row pt-2 position-relative">
+                <input type="submit" class="mx-auto my-2 w-75 text-white submit-journey-form" value="Verbindung suchen">
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </main>
     <!--The identical footer on all pages contains a quick list of sponsors, contact links and a quick imprint-->
