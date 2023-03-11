@@ -42,10 +42,12 @@
         <div class="info-card my-3">
           <h2>Fahrplan</h2>
           <!--The bootstrap grid system goes brrrr once again-->
-          <form class="journey-form"></form>
+          <form class="journey-form" onsubmit=callSBB() action="">
             <div class="container-fluid p-0">
               <div class="row row-cols-1 row-cols-md-2">
                 <div class="col">
+                  <!--The default value Glarus, Bahnhof instead of Glarus, Kantonsschule, Spital has been chosen because-->
+                  <!--a) most connections at night are from the trainstation and b) all buses leaving from Glarus, Bahnhof headed Naefels-Mollis, Bahnhof pass by the Kanti-->
                     <label for="starting-point">Von:</label>
                     <input type="text" id="starting-point" class="form-control bg-dark text-white" value="Glarus, Bahnhof">
                 </div>
@@ -72,7 +74,7 @@
                   <label for="arrival">Ankunft</label>
                 </div>
               </div>
-              <div class="row pt-2 position-relative">
+              <div class="row pt-2">
                 <input type="submit" class="mx-auto my-2 w-75 text-white submit-journey-form" value="Verbindung suchen">
               </div>
             </div>
@@ -159,5 +161,6 @@
       </div>
     </footer>
     <script type="text/javascript" src="../js/navbarController.js"></script>
+    <script type="text/javascript" src="../js/sbbFormController.js"></script>
   </body>
 </html>
