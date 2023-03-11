@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -15,31 +16,146 @@
     <div class="container" id="navbarContainer" style="height: 60px;">
       <!--The navbar is always stuck to the top of the view port and collapses into a hamburger menu at the md breakpoint-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
-          <a class="navbar-brand" href="home.html"><img type="image/png" src="../media/img/logo_transparent.png" style="height: 60px;"></a>
-          <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" onclick=updateNavbar() style="right: 10px;">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="home.html"><span>Home</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="infos.html"><span>Infos</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white current" href="team.html"><span>Über uns</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="insta-link" href="https://www.instagram.com/kaba.2023.gl"><i class="bi bi-instagram" style="width: 1em; height: 1em;"></i></a>
-                </li>
-              </ul>
-          </div>
+        <a class="navbar-brand" href="home.html"><img type="image/png" src="../media/img/logo_transparent.png" style="height: 60px;"></a>
+        <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="#navbarCollapse" aria-expanded="false" style="right: 10px;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="home.html"><span>Home</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="infos.html"><span>Infos</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white current" href="team.html"><span>Über uns</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="insta-link" href="https://www.instagram.com/kaba.2023.gl"><i class="bi bi-instagram" style="width: 1em; height: 1em;"></i></a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
     <main class="mx-1 mx-md-5">
-      <div class="placeholder" style="padding-bottom: 500px;">
-        Placeholder
+      <div class="info-card my-3">
+        <h2>Chefin</h2>
+        <img class="ok-img" type="image/jpg" src="../media/img/OK_Chef.jpeg">
+        <p>
+          Hey zämä, ich bi d Sarina und d KaBa Chefin vo dem Jahr.
+          Mini Ufgab isch, dass alles lauft und dä Insta Account z füehre, um eu alli wichtige News mitzteile.
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Getränke</h2>
+        <div id="drinksCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img type="image/jpg" src="../media/img/OK_Saufen_1.jpeg" class="ok-img">
+            </div>
+            <div class="carousel-item">
+              <img type="image/jpg" src="../media/img/OK_Saufen_2.jpeg" class="ok-img">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#drinksCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#drinksCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p>
+          Mir sind de Moritz und de Dominic und sind das Jahr für alles rund umd Bar zuäständig.
+          Falls ihr noch irgendwelchi Vorschläg oder Wünsch hend was ade Bar nöd dörf fehlä, dänn schribed eif.
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Musik</h2>
+        <img class="ok-img" type="image/jpg" src="../media/img/OK_Musik.jpeg">
+        <p>
+          Hoi zeme, mir sind d Julika, dr Nici und dr Nathan.
+          Mir sind zueständig, dass ihr am Kaba 2023 am ganzä Abig gueti Musig hend.
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Technik</h2>
+        <img class="ok-img" type="image/jpg" src="../media/img/OK_Technik.jpeg">
+        <p>
+          Hoi Zämä, ich bin de Tobias und ich bin am dies jährige KABA für d Technik verantwortlich.
+          Mir vom KABA-Technikteam sorget für d belüüchtig vom ganze Areal und au defür das ihr en cooli ziit bi de mainstage chend ha.
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Finanzen</h2>
+        <img class="ok-img" type="image/jpg" src="../media/img/OK_Finanzen.jpeg">
+        <p>
+          Hallo zeme, ich heisse Anusha und bin am diesjährige KaBa für Finanze & Sponsoring zueständig :)
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Dekoration</h2>
+        <img class="ok-img" type="image/jpg" src="../media/img/OK_Deko.jpeg">
+        <p>
+          Heyyy zämmä, ich bin d Nina und versueche das Jahr mit der Deko es unvergesslichs Ambiente z schaffe, 
+          damit ihr der KABA so richtig gnüsse chänd!
+          Peace out✌🏻
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Finanzen</h2>
+        <img class="ok-img" type="image/jpg" src="../media/img/OK_Mampfmampf.jpeg">
+        <p>
+          Hoi zäme, ich bin d Una.
+          Das Jahr am KaBa bin ich für z Esse zueständig und stille jede Hunger🍽️
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Trailer & Showblock</h2>
+        <div id="showblockCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img type="image/jpg" src="../media/img/OK_Showblock_1.jpeg" class="ok-img">
+            </div>
+            <div class="carousel-item">
+              <img type="image/jpg" src="../media/img/OK_Showblock_2.jpeg" class="ok-img">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#showblockCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#showblockCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p>
+          Salüü! Das Jahr sind mir, Julian und Matej füre Trailer und Showblock zueständig.
+          Mitem Trailer chämmer z thema vum diesjährige KaBa himmlisch reveale und am KaBa selber wirdet üch bim Showblock üseri ikonischä Lehrer*inne sicherlich zum schmunzle bringä.
+          tschüss!
+        </p>
+      </div>
+      <div class="info-card my-3">
+        <h2>Security</h2>
+        <div id="securityCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img type="image/jpg" src="../media/img/OK_Security_1.jpeg" class="ok-img">
+            </div>
+            <div class="carousel-item">
+              <img type="image/jpg" src="../media/img/OK_Security_2.jpeg" class="ok-img">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#securityCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#securityCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p>
+          Hey zämä, mir d Linn und d Zoé sind im 2023 zueständig für eui Sicherheit.
+          Mir passed uf alles uf so dass mer alli en geile KABA chönnd firä. 
+        </p>
       </div>
     </main>
     <!--The identical footer on all pages contains a quick list of sponsors, contact links and a quick imprint-->
@@ -84,7 +200,7 @@
             <a href="#"><img type="image/png" src="../media/img/Placeholder.png"></a>
           </div>
         </div>
-        <div class="row row-cols-md-2">
+        <div class="row row-cols-md-2 justify-content-center">
           <div class="row row-cols-1">
             <h5 class="text-uppercase" style="text-align: center;">Weitere Sponsoren</h5>
             <div class="col d-flex justify-content-center">
@@ -100,15 +216,15 @@
               <a href="#" class="text-white">Placeholder</a>
             </div>
           </div>
-          <div class="row row-cols-1">
+          <div class="row row-cols-1 justify-content-center">
             <h5 class="text-uppercase mt-2 mt-md-0 text-center">Kontakt</h5>
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex text-center justify-content-center">
               <span>KABA Chefin: <a class="text-white" href="mailto: placeholder@place.holder">placeholder@place.holder</a></span>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex text-center justify-content-center">
               <span>Insta: <a class="text-white" href="https://www.instagram.com/kaba.2023.gl" target="_blank">kaba.2023.gl</a></span>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex text-center justify-content-center">
               <span>Webseite: <a class="text-white" href="mailto: cyrill.marti@stud.schulegl.ch">cyrill.marti@stud.schulegl.ch</a></span>
             </div>
           </div>
@@ -120,6 +236,5 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="../js/navbarController.js"></script>
   </body>
 </html>

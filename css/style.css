@@ -52,14 +52,14 @@ footer{
 
 .sponsor-main img{
     display: block;
+    width: 80vw;
     max-width: 300px;
-    max-height: 200px;
 }
 
 .sponsor-co img {
     display: block;
-    max-width: 200px;
-    max-height: 100px;
+    width: 50vw;
+    max-width: 150px;
 }
 
 .imprint{
@@ -126,6 +126,11 @@ footer{
 .time-table tbody td{
     padding-top: 0;
     padding-bottom: 0;
+    color: #f2f2f2 
+}
+
+.time-table tbody tr:hover{
+    background-color: #2d2d2d;
 }
 
 .time-table thead{
@@ -142,6 +147,13 @@ footer{
 .submit-journey-form:hover{
     background-color: #ff0000;
     border-color: #ff0000;
+}
+
+.ok-img{
+    display: block;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 767px){

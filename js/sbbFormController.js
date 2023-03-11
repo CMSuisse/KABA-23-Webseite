@@ -14,6 +14,11 @@ function updateDateAndTime(){
     var dd = currentDateFull.getDate();
     var hh = currentDateFull.getHours();
     var min = currentDateFull.getMinutes();
+    // If the time is something like xx:05, min will just be 1 which will not be accepted by the form input field as a value
+    // Only figured that one out at 13:01 XD
+    if(min <= 9){
+        min = String("0" + min);
+    }
     var currentDate = String(yyyy + "-" + mm + "-" + dd);
     var currentTime = String(hh + ":" + min);
     // Update the values
