@@ -71,8 +71,28 @@ footer{
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    max-width: 1300px;
     margin: auto;
+}
+
+.index-main > .info-card{
+    max-width: 1300px;
+}
+
+.infos-main > .info-card,
+.team-main > .info-card{
+    max-width: 900px;
+}
+
+.info-card > h3{
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: clamp(30px, 5vw, 50px);
+}
+
+.info-card > hr{
+    height: 3px;
+    border-width: 0px;
+    opacity: 0.6;
 }
 
 .info-card-ok{
@@ -96,7 +116,7 @@ footer{
 .image-wrapper-acts{
     position: relative;
     width: 80%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .act-time{
@@ -193,6 +213,16 @@ footer{
     align-items: center;
     text-align: center;
     height: 100px;
+}
+
+.kaba-title{
+    font-size: min(10vw, 110px);
+    margin-bottom: 0px;
+}
+
+.kaba-date{
+    font-size: min(8vw, 90px);
+    margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 767px){
