@@ -2,7 +2,8 @@
 however, on this webpage there are features that are supposed to have
 a uniform appearance on every page that the user is on, like the navbar and footer.
 That's why I'm still using css to style these elements of the page in one location to affect
-every page simultaneously*/
+every page simultaneously. And some things you just can't do with bootstrap (or maybe you can and I'm just dumb).
+And yes, I think it's perfectly normal to just make one css file shared across every html file*/
 
 body{
     background-color: #0d0000;
@@ -199,6 +200,24 @@ footer{
 
 .overlay-ok:hover{
     opacity: 1;
+}
+
+@keyframes technik-overlay-ok{
+    17% {background-color: rgba(200, 0, 0, 0.8);}
+    50% {background-color: rgba(0, 200, 0, 0.8);}
+    83% {background-color: rgba(0, 0, 200, 0.8);}
+    100%{background-color: rgba(200, 0, 0, 0.8);}
+}
+
+.technik-overlay-ok{
+    background: rgba(200, 0, 0, 0.8);
+}
+
+.technik-overlay-ok:hover{
+    animation-name: technik-overlay-ok;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 .foto-info{
