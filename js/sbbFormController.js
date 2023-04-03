@@ -19,6 +19,10 @@ function updateDateAndTime(){
     if(min <= 9){
         min = String("0" + min);
     }
+    // Something similar happened on the 3 of April with the date XD
+    if(dd <= 9){
+        dd = String("0" + dd);
+    }
     var currentDate = String(yyyy + "-" + mm + "-" + dd);
     var currentTime = String(hh + ":" + min);
     // Update the values

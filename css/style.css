@@ -59,8 +59,10 @@ footer{
 
 .sponsor-co img {
     display: block;
-    width: 50vw;
     max-width: 150px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
 }
 
 .imprint{
@@ -102,10 +104,6 @@ footer{
 
 .logo-card{
     background-color: #0d0000;
-}
-
-.trailer-placeholder{
-    padding-bottom: calc(calc(100%/16)*9);
 }
 
 .act-image{
@@ -255,6 +253,7 @@ footer{
 
     .nav-item{
         padding: 0px 5px;
+        margin: 2px 0px;
     }
 
     .nav-item > .nav-link{
