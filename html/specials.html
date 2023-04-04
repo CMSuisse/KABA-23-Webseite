@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <title>KABA 23 Infos</title>
+    <title>KABA 23 Specials</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="KABA 2023, KABA, Kantiball, Kanti-ball">
     <meta name="description" content="Willkommen auf der offiziellen Websiete des Kantiballs 2023">
@@ -11,15 +11,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="../css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/sbbFormController.js" defer></script>
   </head>
-
   <body>
     <!--This container is used to not mess up the document flow when the page loads, because the navbar is removed from the flow due to it having a fixed position-->
     <div class="container" id="navbarContainer" style="height: 60px;">
       <!--The navbar is always stuck to the top of the view port and collapses into a hamburger menu at the md breakpoint-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
-        <a class="navbar-brand" href="../index.html"><img src="../media/img/logo_light.svg" style="height: 60px;" alt="KABA 2023 Logo"></a>
+        <a class="navbar-brand" href="../index.html"><img src="../media/img/logo_light.svg" style="height: 60px;"></a>
         <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="#navbarCollapse" aria-expanded="false" style="right: 10px;">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,97 +27,54 @@
               <a class="nav-link text-white" href="../index.html"><span>Home</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white current" href="infos.html"><span>Infos</span></a>
+              <a class="nav-link text-white" href="infos.html"><span>Infos</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="team.html"><span>Über uns</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="specials.html"><span>Specials</span></a>
+              <a class="nav-link text-white current" href="specials.html"><span>Specials</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="fotos.html"><span>Fotos</span></a>
             </li>
             <li class="nav-item">
-              <a class="insta-link" href="https://www.instagram.com/kaba.2023.gl"><i class="bi bi-instagram" style="width: 1em; height: 1em;"></i></a>
+              <a class="insta-link" href="https://www.instagram.com/p/Cn18rdOsQbL/"><i class="bi bi-instagram" style="width: 1em; height: 1em;"></i></a>
             </li>
           </ul>
         </div>
       </nav>
-    </div>
-    <main class="mx-1 mx-md-5 infos-main">
-      <div class="info-card my-3">
-        <h3>Fahrplan</h3>
-        <!--The bootstrap grid system goes brrrr once again-->
-        <form class="journey-form" onsubmit=callSBB() action="">
-          <div class="container-fluid p-0">
-            <div class="row row-cols-1 row-cols-md-2">
-              <div class="col">
-                <!--Whilst the form does limit the user to only two possible starting positions, after the KABA only these two will be used-->
-                <label for="starting-point">Von:</label>
-                <select id="starting-point" class="form-select bg-dark text-white">
-                  <option value="Glarus, Kantonsschule/Spital">Glarus, Kantonsschule/Spital</option>
-                  <option value="Glarus, Bahnhof">Glarus, Bahnhof</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="destination">Nach:</label>
-                <input type="text" id="destination" class="form-control bg-dark text-white">
-              </div>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2">
-              <div class="col">
-                <label for="date">Datum:</label>
-                <input type="date" id="date" class="form-control bg-dark text-white" value="2023-04-28">
-              </div>
-              <div class="col">
-                <label for="time">Zeit:</label>
-                <input type="time" id="time" class="form-control bg-dark text-white" value="22:00">
-              </div>
-            </div>
-            <div class="row py-2">
-              <div class="col">
-                <input type="radio" name="isDepartureTime" value="true" checked="checked" id="departure">
-                <label for="departure">Abfahrt</label>
-                <input type="radio" name="isDepartureTime" value="false" id="arrival">
-                <label for="arrival">Ankunft</label>
-              </div>
-            </div>
-            <div class="row pt-2">
-              <input type="submit" class="mx-auto my-2 w-75 text-white submit-journey-form" value="Verbindung suchen">
-            </div>
-          </div>
-        </form>
-      </div>
+    </div>    
+    <main class="mx-2 mx-md-5 specials-main">
       <div class="info-card my-3 pb-2">
-        <h3>U16 Erlaubnis</h3>
+        <h3>Coiffeur Dätwyler</h3>
         <hr>
-        <p>
-          Für Gäste, welche unter 16 Jahre alt sind, endet der KaBa um 00:00 Uhr.
-          Mit einer Unterschrift eines Elternteils haben sie aber die Erlaubnis das Fest bis 02:00 Uhr zu besuchen.
-        </p>
-        <a class="w-100" href="../media/pdf/U16_Erlaubnis.pdf" download>
-          <img class="w-100" src="../media/img/U16_Erlaubnis_preview.png" alt="Downloadlink für die U16 Erlaubnis">
-        </a>
+        <img class="img-fluid mx-auto d-block w-100" src="../media/img/Placeholder.png" alt="Bild für das Special: Coiffeur Dätwyler">
+        <p class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque distinctio ab numquam deleniti facilis dolorum facere quam nisi, aut veniam rem iure quasi tenetur tempora maxime, ullam beatae consequuntur magnam pariatur in! Sunt nisi animi nihil culpa ad tempore similique quisquam vero numquam, optio possimus odio, natus voluptatem porro debitis.</p>
       </div>
       <div class="info-card my-3 pb-2">
-        <h3>Speise- & Getränkekarte</h3>
+        <h3>Shotbar</h3>
         <hr>
-        <a class="w-100" href="../media/pdf/Speise_u_Getraenke_Karte.pdf" download>
-          <img class="w-100" src="../media/img/Speise_u_Getraenke_Karte_Placeholder.PNG" alt="Downloadlink für die Speise und Getränkekarte">
-        </a>
+        <img class="img-fluid mx-auto d-block w-100" src="../media/img/Placeholder.png" alt="Bild für das Special: Shotbar">
+        <p class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque distinctio ab numquam deleniti facilis dolorum facere quam nisi, aut veniam rem iure quasi tenetur tempora maxime, ullam beatae consequuntur magnam pariatur in! Sunt nisi animi nihil culpa ad tempore similique quisquam vero numquam, optio possimus odio, natus voluptatem porro debitis.</p>
       </div>
       <div class="info-card my-3 pb-2">
-        <h3>Reglement des KABAs</h3>
+        <h3>Kostümwettbewerb</h3>
         <hr>
-        <a class="w-100" href="../media/pdf/Reglement.pdf" download>
-          <img class="w-100" src="../media/img/reglement_p1_preview.PNG" alt="Downloadlink für das KABA Reglement">
-        </a>
+        <img class="img-fluid mx-auto d-block w-100" src="../media/img/Placeholder.png" alt="Bild für das Special: Kostümwettbewerb">
+        <p class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque distinctio ab numquam deleniti facilis dolorum facere quam nisi, aut veniam rem iure quasi tenetur tempora maxime, ullam beatae consequuntur magnam pariatur in! Sunt nisi animi nihil culpa ad tempore similique quisquam vero numquam, optio possimus odio, natus voluptatem porro debitis.</p>
       </div>
       <div class="info-card my-3 pb-2">
-        <a class="w-100" href="../media/pdf/Reglement.pdf" download>
-          <img class="w-100" src="../media/img/reglement_p2_preview.PNG" alt="Downloadlink für das KABA Reglement">
-        </a>
+        <h3>Karaoke</h3>
+        <hr>
+        <img class="img-fluid mx-auto d-block w-100" src="../media/img/Placeholder.png" alt="Bild für das Special: Karaoke">
+        <p class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque distinctio ab numquam deleniti facilis dolorum facere quam nisi, aut veniam rem iure quasi tenetur tempora maxime, ullam beatae consequuntur magnam pariatur in! Sunt nisi animi nihil culpa ad tempore similique quisquam vero numquam, optio possimus odio, natus voluptatem porro debitis.</p>
+      </div>
+      <div class="info-card my-3 pb-2">
+        <h3>Rave (ü16)</h3>
+        <hr>
+        <img class="img-fluid mx-auto d-block w-100" src="../media/img/Placeholder.png" alt="Bild für das Special: Rave">
+        <p class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque distinctio ab numquam deleniti facilis dolorum facere quam nisi, aut veniam rem iure quasi tenetur tempora maxime, ullam beatae consequuntur magnam pariatur in! Sunt nisi animi nihil culpa ad tempore similique quisquam vero numquam, optio possimus odio, natus voluptatem porro debitis.</p>
       </div>
     </main>
     <!--The identical footer on all pages contains a quick list of sponsors, contact links and a quick imprint-->
