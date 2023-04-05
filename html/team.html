@@ -3,8 +3,10 @@
   <head>
     <title>KABA 23 Über uns</title>
     <meta charset="UTF-8">
+    <meta name="keywords" content="KABA 2023, KABA, Kantiball, Kanti-ball">
+    <meta name="description" content="Willkommen auf der offiziellen Websiete des Kantiballs 2023">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../media/img/logo.jpeg">
+    <link rel="icon" href="../media/img/logo_light.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="../css/style.css" rel="stylesheet">
@@ -16,7 +18,7 @@
     <div class="container" id="navbarContainer" style="height: 60px;">
       <!--The navbar is always stuck to the top of the view port and collapses into a hamburger menu at the md breakpoint-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
-        <a class="navbar-brand" href="home.html"><img src="../media/img/logo_transparent.png" style="height: 60px;"></a>
+        <a class="navbar-brand" href="../index.html"><img src="../media/img/logo_light.svg" style="height: 60px;"></a>
         <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="#navbarCollapse" aria-expanded="false" style="right: 10px;">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,6 +34,9 @@
               <a class="nav-link text-white current" href="team.html"><span>Über uns</span></a>
             </li>
             <li class="nav-item">
+              <a class="nav-link text-white" href="specials.html"><span>Specials</span></a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-white" href="fotos.html"><span>Fotos</span></a>
             </li>
             <li class="nav-item">
@@ -41,10 +46,10 @@
         </div>
       </nav>
     </div>
-    <main class="mx-1 mx-md-5">
+    <main class="mx-1 mx-md-5 team-main">
       <div class="info-card info-card-ok my-3">
         <div class="image-wrapper-ok">
-          <img class="ok-img" src="../media/img/OK_Chef.jpeg">
+          <img class="ok-img" src="../media/img/OK_Chef.jpeg" alt="Die KABA-Chefin: Sarina">
           <div class="overlay-ok">
             <h3 class="m-auto">Chefin</h3>
           </div>
@@ -60,10 +65,10 @@
           <div id="drinksCarousel" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="../media/img/OK_Saufen_1.jpeg" class="ok-img">
+                <img src="../media/img/OK_Saufen_1.jpeg" class="ok-img" alt="Die OK-Mitglieder verantwortlich für die Getränke: Dominic und Moritz">
               </div>
               <div class="carousel-item">
-                <img src="../media/img/OK_Saufen_2.jpeg" class="ok-img">
+                <img src="../media/img/OK_Saufen_2.jpeg" class="ok-img" alt="Die OK-Mitglieder verantwortlich für die Getränke: Dominic und Moritz">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#drinksCarousel" data-bs-slide="prev">
@@ -84,7 +89,7 @@
       </div>
       <div class="info-card info-card-ok my-3">
         <div class="image-wrapper-ok">
-          <img class="ok-img" src="../media/img/OK_Musik.jpeg">
+          <img class="ok-img" src="../media/img/OK_Musik.jpeg" alt="Die OK-Mitglieder verantwortlich für Musik: Julika, Nici und Nathan">
           <div class="overlay-ok">
             <h3 class="m-auto">Musik</h3>
           </div>
@@ -96,19 +101,19 @@
       </div>
       <div class="info-card info-card-ok my-3">
         <div class="image-wrapper-ok">
-          <img class="ok-img" src="../media/img/OK_Technik.jpeg">
-          <div class="overlay-ok">
+          <img class="ok-img" src="../media/img/OK_Technik.jpeg" alt="Das OK-Mitglied verantwortlich für die Technik: Tobias">
+          <div class="overlay-ok technik-overlay-ok">
             <h3 class="m-auto">Technik</h3>
           </div>
         </div>
         <p class="py-2">
           Hoi Zämä, ich bin de Tobias und ich bin am dies jährige KABA für d Technik verantwortlich.
-          Mir vom KABA-Technikteam sorget für d belüüchtig vom ganze Areal und au defür das ihr en cooli ziit bi de mainstage chend ha.
+          Mir vom KABA-Technikteam sorget für d Belüüchtig vom ganze Areal und au defür das ihr en cooli Ziit bi de Mainstage chend ha.
         </p>
       </div>
       <div class="info-card info-card-ok my-3">
         <div class="image-wrapper-ok">
-          <img class="ok-img" src="../media/img/OK_Finanzen.jpeg">
+          <img class="ok-img" src="../media/img/OK_Finanzen.jpeg" alt="Das OK-Mitglied verantwortlich für die Finanzen und die Sponsoren: Anusha">
           <div class="overlay-ok">
             <h3 class="m-auto">Finanzen</h3>
           </div>
@@ -119,7 +124,7 @@
       </div>
       <div class="info-card info-card-ok my-3">
         <div class="image-wrapper-ok">
-          <img class="ok-img" src="../media/img/OK_Deko.jpeg">
+          <img class="ok-img" src="../media/img/OK_Deko.jpeg" alt="Das OK-Mitglied verantwortlich für die Dekoration: Nina">
           <div class="overlay-ok">
             <h3 class="m-auto">Dekoration</h3>
           </div>
@@ -127,19 +132,19 @@
         <p class="py-2">
           Heyyy zämmä, ich bin d Nina und versueche das Jahr mit der Deko es unvergesslichs Ambiente z schaffe, 
           damit ihr der KABA so richtig gnüsse chänd!
-          Peace out
+          Peace out!
         </p>
       </div>
       <div class="info-card info-card-ok my-3">
         <div class="image-wrapper-ok">
-          <img class="ok-img" src="../media/img/OK_Mampfmampf.jpeg">
+          <img class="ok-img" src="../media/img/OK_Mampfmampf.jpeg" alt="Das OK-Mitglied verantwortlich für das Essen: Una">
           <div class="overlay-ok">
             <h3 class="m-auto">Essen</h3>
           </div>
         </div>
         <p class="py-2">
           Hoi zäme, ich bin d Una.
-          Das Jahr am KaBa bin ich für z Esse zueständig und stille jede Hunger
+          Das Jahr am KaBa bin ich für z Esse zueständig und stille jede Hunger.
         </p>
       </div>
       <div class="info-card info-card-ok my-3">
@@ -147,10 +152,10 @@
           <div id="showblockCarousel" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="../media/img/OK_Showblock_1.jpeg" class="ok-img">
+                <img src="../media/img/OK_Showblock_1.jpeg" class="ok-img" alt="Die OK-Mitglieder verantwortlich für den Trailer und den Showblock: Julian und Matej">
               </div>
               <div class="carousel-item">
-                <img src="../media/img/OK_Showblock_2.jpeg" class="ok-img">
+                <img src="../media/img/OK_Showblock_2.jpeg" class="ok-img" alt="Die OK-Mitglieder verantwortlich für den Trailer und den Showblock: Julian und Matej">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#showblockCarousel" data-bs-slide="prev">
@@ -175,10 +180,10 @@
           <div id="securityCarousel" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="../media/img/OK_Security_1.jpeg" class="ok-img">
+                <img src="../media/img/OK_Security_1.jpeg" class="ok-img" alt="Die OK-Mitglieder verantwortlich für die Security: Linn und Zoé">
               </div>
               <div class="carousel-item">
-                <img src="../media/img/OK_Security_2.jpeg" class="ok-img">
+                <img src="../media/img/OK_Security_2.jpeg" class="ok-img" alt="Die OK-Mitglieder verantwortlich für die Security: Linn und Zoé">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#securityCarousel" data-bs-slide="prev">
@@ -207,18 +212,21 @@
             <h5 class="text-uppercase" style="text-align: center;">Hauptsponsoren</h5>
           </div>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center align-items-center">
           <div class="col-auto sponsor-main mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://www.althauslegal.ch" target="_blank"><img src="../media/img/sponsors/main_althaus_legal.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: Althaus Legal"></a>
           </div>
           <div class="col-auto sponsor-main mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://www.kfn.ch" target="_blank"><img src="../media/img/sponsors/main_kfn.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: KFN"></a>
           </div>
           <div class="col-auto sponsor-main mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://www.raiffeisen.ch/rch/de.html" target="_blank"><img src="../media/img/sponsors/main_raiffeisen.png" alt="Link zu der Webseite einer unserer Hauptsponsoren: Raiffeisen"></a>
           </div>
           <div class="col-auto sponsor-main mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://goethe.swiss" target="_blank"><img src="../media/img/sponsors/main_goethe.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: Goethe"></a>
+          </div>
+          <div class="col-auto sponsor-main mt-2 mb-2">
+            <a href="https://baeschlinverlag.lesestoff.ch/de/home" target="_blank"><img src="../media/img/sponsors/main_baeschlin.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: Baeschlin"></a>
           </div>
         </div>
         <div class="row">
@@ -226,40 +234,61 @@
             <h5 class="text-uppercase" style="text-align: center;">Co-Sponsoren</h5>
           </div>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center align-items-center">
           <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://www.seewache.ch" target="_blank"><img src="../media/img/sponsors/co_seewache.PNG" alt="Link zu der Webseite einer unserer Co-Sponsoren: Seewache"></a>
           </div>
           <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://thoma-werbetechnik.ch" target="_blank"><img src="../media/img/sponsors/co_thoma.PNG" alt="Link zu der Webseite einer unserer Co-Sponsoren: Thoma"></a>
           </div>
           <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://www.botty.ch" target="_blank"><img src="../media/img/sponsors/co_botty.png" alt="Link zu der Webseite einer unserer Co-Sponsoren: Botty Schuhe"></a>
           </div>
           <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="#"><img src="../media/img/Placeholder.png"></a>
+            <a href="https://www.brauereiadler.ch" target="_blank"><img src="../media/img/sponsors/co_adler_braeu.png" alt="Link zu der Webseite einer unserer Co-Sponsoren: Adler Bräu"></a>
+          </div>
+          <div class="col-auto sponsor-co mt-2 mb-2">
+            <a href="https://linthstz.ch/" target="_blank"><img src="../media/img/sponsors/co_linthstz.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Linth STZ"></a>
+          </div>
+          <div class="col-auto sponsor-co mt-2 mb-2">
+            <a href="https://www.walhalla-weine.ch/startseite.html" target="_blank"><img src="../media/img/sponsors/co_walhalla.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Walhalla"></a>
+          </div>
+          <div class="col-auto sponsor-co mt-2 mb-2">
+            <img src="../media/img/sponsors/co_route.png" alt="Einer unserer Co-Sponsoren: Route 66 Bar">
           </div>
         </div>
         <div class="row row-cols-md-2 justify-content-center">
           <div class="row row-cols-1">
             <h5 class="text-uppercase" style="text-align: center;">Weitere Sponsoren</h5>
             <div class="col d-flex justify-content-center">
-              <a href="#" class="text-white">Placeholder</a>
+              <a href="https://www.stm-ag.ch" target="_blank" class="text-white">Stöckli Metall AG</a>
             </div>
             <div class="col d-flex justify-content-center">
-              <a href="#" class="text-white">Placeholder</a>
+              <a href="https://www.tbglarus.ch" target="_blank" class="text-white">Technische Betriebe Glarus</a>
             </div>
             <div class="col d-flex justify-content-center">
-              <a href="#" class="text-white">Placeholder</a>
+              <a href="https://belvedere-am.com" target="_blank" class="text-white">Belvédère Asset Management AG</a>
             </div>
             <div class="col d-flex justify-content-center">
-              <a href="#" class="text-white">Placeholder</a>
+              <a href="https://glkb.ch" target="_blank" class="text-white">Glarner Kantonalbank</a>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <a href="https://service7000.ch/" target="_blank" class="text-white">Service 7000</a>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <a href="https://baeckerei-gabriel.ch/ueber-uns" target="_blank" class="text-white">Bäckerei Gabriel</a>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <a href="https://www.daetwyler-intercoiffure.ch" target="_blank" class="text-white">Dätwyler Intercoiffeure</a>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <a href="https://www.lintharena.ch" target="_blank" class="text-white">Lintharena AG</a>
             </div>
           </div>
           <div class="row row-cols-1 justify-content-center">
             <h5 class="text-uppercase mt-2 mt-md-0 text-center">Kontakt</h5>
             <div class="col d-flex text-center justify-content-center">
-              <span>KABA Chefin: <a class="text-white" href="mailto: placeholder@place.holder">placeholder@place.holder</a></span>
+              <span>KABA Chefin: <a class="text-white" href="mailto: sarina.gaehwiler@stud.schulegl.ch">sarina.gaehwiler@stud.schulegl.ch</a></span>
             </div>
             <div class="col d-flex text-center justify-content-center">
               <span>Insta: <a class="text-white" href="https://www.instagram.com/kaba.2023.gl" target="_blank">kaba.2023.gl</a></span>
@@ -272,6 +301,10 @@
         <div class="row row-cols-1 justify-content-center mt-2 py-2 imprint">
           <div class="col-auto text-center">
             <span>Webseite von Cyrill Marti</span>
+            <br>
+            <span>Logo von Silja Marti</span>
+            <br>
+            <span>Fotos von Leandra Tresch</span>
           </div>
         </div>
       </div>

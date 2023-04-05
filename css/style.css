@@ -2,7 +2,8 @@
 however, on this webpage there are features that are supposed to have
 a uniform appearance on every page that the user is on, like the navbar and footer.
 That's why I'm still using css to style these elements of the page in one location to affect
-every page simultaneously*/
+every page simultaneously. And some things you just can't do with bootstrap (or maybe you can and I'm just dumb).
+And yes, I think it's perfectly normal to just make one css file shared across every html file*/
 
 body{
     background-color: #0d0000;
@@ -58,8 +59,10 @@ footer{
 
 .sponsor-co img {
     display: block;
-    width: 50vw;
     max-width: 150px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
 }
 
 .imprint{
@@ -69,10 +72,30 @@ footer{
 .info-card{
     background-color: #1d1d1d;
     border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    max-width: 1300px;
+    padding: 0px 8px;
     margin: auto;
+}
+
+.index-main > .info-card{
+    max-width: 1300px;
+}
+
+.infos-main > .info-card,
+.team-main > .info-card,
+.specials-main > .info-card{
+    max-width: 900px;
+}
+
+.info-card > h3{
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: clamp(30px, 5vw, 50px);
+}
+
+.info-card > hr{
+    height: 3px;
+    border-width: 0px;
+    opacity: 0.6;
 }
 
 .info-card-ok{
@@ -81,10 +104,6 @@ footer{
 
 .logo-card{
     background-color: #0d0000;
-}
-
-.trailer-placeholder{
-    padding-bottom: calc(calc(100%/16)*9);
 }
 
 .act-image{
@@ -96,7 +115,7 @@ footer{
 .image-wrapper-acts{
     position: relative;
     width: 80%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .act-time{
@@ -181,6 +200,24 @@ footer{
     opacity: 1;
 }
 
+@keyframes technik-overlay-ok{
+    17% {background-color: rgba(200, 0, 0, 0.8);}
+    50% {background-color: rgba(0, 200, 0, 0.8);}
+    83% {background-color: rgba(0, 0, 200, 0.8);}
+    100%{background-color: rgba(200, 0, 0, 0.8);}
+}
+
+.technik-overlay-ok{
+    background: rgba(200, 0, 0, 0.8);
+}
+
+.technik-overlay-ok:hover{
+    animation-name: technik-overlay-ok;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
 .foto-info{
     display: flex;
     align-items: center;
@@ -195,6 +232,16 @@ footer{
     height: 100px;
 }
 
+.kaba-title{
+    font-size: min(10vw, 110px);
+    margin-bottom: 0px;
+}
+
+.kaba-date{
+    font-size: min(8vw, 90px);
+    margin-bottom: 0px;
+}
+
 @media only screen and (max-width: 767px){
     .navbar-collapse{
         width: 100%;
@@ -206,6 +253,7 @@ footer{
 
     .nav-item{
         padding: 0px 5px;
+        margin: 2px 0px;
     }
 
     .nav-item > .nav-link{
