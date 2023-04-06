@@ -83,7 +83,7 @@ footer{
 .infos-main > .info-card,
 .team-main > .info-card,
 .specials-main > .info-card{
-    max-width: 900px;
+    max-width: 750px;
 }
 
 .info-card > h3{
