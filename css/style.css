@@ -8,6 +8,7 @@ And yes, I think it's perfectly normal to just make one css file shared across e
 body{
     background-color: #0d0000;
     color:#f2f2f2;
+    overflow-x: hidden;
 }
 
 footer{
