@@ -1,11 +1,11 @@
 // This file loads the images to be displayed on the fotos page of the website
-// For this, it uses a sort of lazy loading technique that loads a batch of 20 images and adds a loading trigger at the end of them
+// For this, it uses a sort of lazy loading technique that loads a batch of 20 images and adds a loading trigger in the middle of them
 // When the loading trigger comes into the the viewport, it is deleted, a new batch of 20 images are loaded and a new loading trigger is added
 
 // The first call to the Flickr API triggered by a loading trigger will have to request page 2 of the photostream
 var page_nr = 2;
 // This value sets to false when all of the images have been loaded
-var should_load = true;
+var should_fully_load = true;
 // This variable will be set to its actual value later, but it has to be global, so here it is
 var total_photos = 100;
 
@@ -15,7 +15,7 @@ function loadPhotosOnPageLoad(){
     // This request gets the first 20 images of the photostream
     let url = "https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=1&format=json&nojsoncallback=1";
     request.open("GET", url, true);
-    addPlaceholderPhotosToDOM();
+    addPlaceholderPhotosToDOM(20);
 
     request.onreadystatechange = function(){
         // If the request has been completely processed
@@ -43,12 +43,15 @@ function loadPhotosOnPageLoad(){
 
 function loadNextPhotosPage(){
     var request = new XMLHttpRequest();
-    
     // This request gets the next 20 images of the photostream
     let url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=${page_nr}&format=json&nojsoncallback=1`;
-    page_nr ++;
     request.open("GET", url, true);
-    addPlaceholderPhotosToDOM();
+    // If the page should add 20 new placeholders do so, otherwise calculate how many placeholders are still needed and add those
+    addPlaceholderPhotosToDOM(should_fully_load ? 20 : total_photos - 20*(page_nr-1));
+    page_nr ++;
+    // Determine if the page should still add 20 new placeholders the next time this function is called
+    should_fully_load = 20*page_nr > total_photos ? false : true;
+    console.log(should_fully_load);
 
     request.onreadystatechange = function(){
         // If the request has been completely processed
@@ -58,14 +61,13 @@ function loadNextPhotosPage(){
                 // Extract only the actually useful part of the response before sending it off to the next function
                 const RESPONSE = JSON.parse(this.responseText);
                 total_photos = RESPONSE.photos.total;
-                // Status code can be 200, but the images still couldn't load
+                // HTTP status code can be 200, but the images still couldn't load
                 if(RESPONSE.stat == "fail"){
                     addFlickrLinkToDOM();
                     return;
                 }
                 const PHOTOS = RESPONSE.photos.photo;
                 replacePlaceholderPhotos(PHOTOS);
-                // When all photos have been loaded, set should_load to false
             }
             else{
                 addFlickrLinkToDOM();
@@ -92,12 +94,11 @@ function addFlickrLinkToDOM(){
    }
 }
 
-function addPlaceholderPhotosToDOM(){
+function addPlaceholderPhotosToDOM(placeholder_nr){
     // Grab the div element that will contain all of the photos from the page
     var photosContainer = document.getElementById("fotos-container");
     const PLACEHOLDER_URL = "../media/img/img_load_placeholder.png";
-    // Every call to the Flickr API will (hopefully) return 20 images at a time
-    for(var i = 0; i < 20; i++){
+    for(var i = 0; i < placeholder_nr; i++){
         // To inspect one specific photo individually, every image will be wrapped in an anchor
         var img_anchor = document.createElement("a");
         img_anchor.href = PLACEHOLDER_URL;
@@ -111,8 +112,12 @@ function addPlaceholderPhotosToDOM(){
         img_element.classList.add("flickr-img-placeholder");
         img_anchor.appendChild(img_element);
         photosContainer.appendChild(img_anchor);
+        if(i == 10){
+            // Place the loading trigger in the middle of the photos batch so that a user that just slowly scrolls through the page will never have to see a placeholder image
+            // Only add a loading trigger when there are still new images to be loaded
+            if(should_fully_load) addLoadingTriggerToDOM();
+        }
     }
-    addLoadingTriggerToDOM();
 }
 
 function addLoadingTriggerToDOM(){
@@ -127,15 +132,12 @@ function addLoadingTriggerToDOM(){
 }
 
 // This function is called by the intersection observer observing the loading trigger
-function observerCallback(events, observer){
+function observerCallback(events){
     events.forEach(event => {
         if(event.isIntersecting){
             // If the right event has been triggered, delete the loading trigger and load the next batch of images
             event.target.remove();
-            // Only continue to load when there are still images left to load
-            if(should_load){
-                loadNextPhotosPage();
-            }
+            loadNextPhotosPage();
         }
     });
 }
@@ -155,17 +157,6 @@ function replacePlaceholderPhotos(JSON_PHOTOS_ARRAY){
         // Remove the class tags from the elements
         img_anchor.classList.remove("flickr-img-anchor-placeholder");
         img_element.classList.remove("flickr-img-placeholder");
-    }
-}
-
-// Because the addPlaceholderPhotosToDOM function always adds 20 images at a time, there will be placeholders left over after
-// all images have been loaded from the photostream
-function cleanUpPlaceholders(){
-    console.log("hewwo");
-    var photosContainer = document.getElementById("fotos-container");
-    var placeholders = photosContainer.getElementsByClassName("flickr-img-anchor-placeholder")
-    for(var placeholder of placeholders){
-        placeholder.remove();
     }
 }
 
