@@ -112,12 +112,9 @@ function addPlaceholderPhotosToDOM(placeholder_nr){
         img_element.classList.add("flickr-img-placeholder");
         img_anchor.appendChild(img_element);
         photosContainer.appendChild(img_anchor);
-        if(i == 10){
-            // Place the loading trigger in the middle of the photos batch so that a user that just slowly scrolls through the page will never have to see a placeholder image
-            // Only add a loading trigger when there are still new images to be loaded
-            if(should_fully_load) addLoadingTriggerToDOM();
-        }
     }
+    // Only add a loading trigger when there are still new images to be loaded
+    if(should_fully_load) addLoadingTriggerToDOM();
 }
 
 function addLoadingTriggerToDOM(){
