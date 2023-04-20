@@ -5,10 +5,13 @@ That's why I'm still using css to style these elements of the page in one locati
 every page simultaneously. And some things you just can't do with bootstrap (or maybe you can and I'm just dumb).
 And yes, I think it's perfectly normal to just make one css file shared across every html file*/
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     background-color: #0d0000;
     color:#f2f2f2;
-    overflow-x: hidden;
 }
 
 footer{
@@ -219,20 +222,6 @@ footer{
     animation-iteration-count: infinite;
 }
 
-.foto-info{
-    display: flex;
-    align-items: center;
-    margin: auto;
-    height: 100vh;
-}
-
-.foto-info > .info-card{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 100px;
-}
-
 .kaba-title{
     font-size: min(10vw, 110px);
     margin-bottom: 0px;
@@ -241,6 +230,11 @@ footer{
 .kaba-date{
     font-size: min(8vw, 90px);
     margin-bottom: 0px;
+}
+
+.flickr-img{
+    display: block;
+    width: 100%;
 }
 
 @media only screen and (max-width: 767px){
