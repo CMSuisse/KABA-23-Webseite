@@ -8,8 +8,11 @@ var page_nr = 2;
 var should_fully_load = true;
 // This variable will be set to its actual value later, but it has to be global, so here it is
 var total_photos = 100;
+// This boolean ensures that an AJAX request has to wait for the currently waiting request to finish
+var request_in_progress = false;
 
 function loadPhotosOnPageLoad(){
+    request_in_progress = true;
     var request = new XMLHttpRequest();
     
     // This request gets the first 20 images of the photostream
@@ -35,6 +38,7 @@ function loadPhotosOnPageLoad(){
             else{
                 addFlickrLinkToDOM();
             }
+            request_in_progress = false;
         }
     }
 
@@ -42,6 +46,7 @@ function loadPhotosOnPageLoad(){
 }
 
 function loadNextPhotosPage(){
+    request_in_progress = true;
     var request = new XMLHttpRequest();
     // This request gets the next 20 images of the photostream
     let url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=${page_nr}&format=json&nojsoncallback=1`;
@@ -51,27 +56,27 @@ function loadNextPhotosPage(){
     page_nr ++;
     // Determine if the page should still add 20 new placeholders the next time this function is called
     should_fully_load = 20*page_nr > total_photos ? false : true;
-    console.log(should_fully_load);
 
     request.onreadystatechange = function(){
         // If the request has been completely processed
         if(this.readyState == 4){
             // If the action has been completed with a success (2xx) or partial success (3xx) status code
             if(this.status >= 200 && this.status < 400){
-                // Extract only the actually useful part of the response before sending it off to the next function
                 const RESPONSE = JSON.parse(this.responseText);
-                total_photos = RESPONSE.photos.total;
                 // HTTP status code can be 200, but the images still couldn't load
                 if(RESPONSE.stat == "fail"){
                     addFlickrLinkToDOM();
                     return;
                 }
+                // Extract only the actually useful part of the response before sending it off to the next function
+                total_photos = RESPONSE.photos.total;
                 const PHOTOS = RESPONSE.photos.photo;
                 replacePlaceholderPhotos(PHOTOS);
             }
             else{
                 addFlickrLinkToDOM();
             }
+            request_in_progress = false;
         }
     }
 
@@ -133,8 +138,15 @@ function observerCallback(events){
     events.forEach(event => {
         if(event.isIntersecting){
             // If the right event has been triggered, delete the loading trigger and load the next batch of images
-            event.target.remove();
-            loadNextPhotosPage();
+            // Only load images when the previous request has been completed
+            if(request_in_progress){
+                console.log("waiting")
+                setTimeout(() => void(0), 100);
+            } else{
+                console.log("executing");
+                event.target.remove();
+                loadNextPhotosPage();
+            }
         }
     });
 }
