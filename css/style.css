@@ -5,13 +5,20 @@ That's why I'm still using css to style these elements of the page in one locati
 every page simultaneously. And some things you just can't do with bootstrap (or maybe you can and I'm just dumb).
 And yes, I think it's perfectly normal to just make one css file shared across every html file*/
 
-html{
+/*This overflow control works on mobile*/
+.site-wrapper{
     overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0px;
 }
 
+/*This overflow control works on desktop*/
 body{
+    overflow-x: hidden;
+    overflow-y: scroll;
     background-color: #0d0000;
-    color:#f2f2f2;
+    color:#ffffff;
+    width: 100vw;
 }
 
 footer{
@@ -25,7 +32,6 @@ footer{
 
 .navbar-toggler{
     position: absolute;
-    right: 0px;
 }
 
 .nav-link{
@@ -63,10 +69,10 @@ footer{
 
 .sponsor-co img {
     display: block;
-    max-width: 150px;
-    max-height: 100px;
     width: auto;
     height: auto;
+    max-width: 150px;
+    max-height: 100px;
 }
 
 .imprint{
@@ -76,7 +82,7 @@ footer{
 .info-card{
     background-color: #1d1d1d;
     border-radius: 5px;
-    padding: 0px 8px;
+    padding: 8px 8px;
     margin: auto;
 }
 
@@ -151,13 +157,17 @@ footer{
     padding-right: 15px;
 }
 
+.time-table{
+    color: #ffffff
+}
+
 .time-table tbody td{
     padding-top: 0;
     padding-bottom: 0;
-    color: #f2f2f2 
 }
 
 .time-table tbody tr:hover{
+    color: #ffffff;
     background-color: #2d2d2d;
 }
 
