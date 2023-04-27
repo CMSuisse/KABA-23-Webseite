@@ -40,7 +40,6 @@ function loadPhotosOnPageLoad(){
             else{
                 addFlickrLinkToDOM();
             }
-            console.log(request_queue.length);
             request_in_progress = false;
             // After the request is done, trigger the event to load the next batch of images
             window.dispatchEvent(new Event("RequestDoneEvent"));
