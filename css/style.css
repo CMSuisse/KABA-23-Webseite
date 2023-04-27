@@ -86,7 +86,8 @@ footer{
     margin: auto;
 }
 
-.index-main > .info-card{
+.index-main > .info-card,
+.fotos-main > .info-card{
     max-width: 1300px;
 }
 
@@ -108,8 +109,8 @@ footer{
     opacity: 0.6;
 }
 
-.info-card-ok{
-    padding-top: 10px;
+.info-card-ok p{
+    margin: 0px;
 }
 
 .logo-card{
