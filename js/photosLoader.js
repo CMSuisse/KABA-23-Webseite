@@ -7,14 +7,18 @@ var page_nr = 2;
 // This value sets to false when all of the images have been loaded
 var should_fully_load = true;
 // This variable will be set to its actual value later, but it has to be global, so here it is
-var total_photos = 100;
-// This boolean ensures that an AJAX request has to wait for the currently waiting request to finish
+var total_photos;
+// This variable is used in the function to load the next batch of images
 var request_in_progress = false;
+// This queue is used to only have one AJAX request at a time but to allow the user to still "load" new placeholders
+var request_queue = new Array();
+// These two events are used to call the function that loads the next batch of images
+let request_done_event = new Event("RequestDoneEvent");
+let request_queue_element_event = new CustomEvent("RequestQueueElementEvent");
 
 function loadPhotosOnPageLoad(){
-    request_in_progress = true;
     var request = new XMLHttpRequest();
-    
+    request_in_progress = true;
     // This request gets the first 20 images of the photostream
     let url = "https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=1&format=json&nojsoncallback=1";
     request.open("GET", url, true);
@@ -32,30 +36,29 @@ function loadPhotosOnPageLoad(){
                     addFlickrLinkToDOM();
                     return;
                 }
+                total_photos = RESPONSE.photos.total;
                 const PHOTOS = RESPONSE.photos.photo;
                 replacePlaceholderPhotos(PHOTOS);
             }
             else{
                 addFlickrLinkToDOM();
             }
+            console.log(request_queue.length);
             request_in_progress = false;
+            // After the request is done, trigger the event to load the next batch of images
+            document.getElementsByTagName("html")[0].dispatchEvent(request_done_event);
         }
     }
 
     request.send();
 }
 
-function loadNextPhotosPage(){
+function loadNextPhotosPage(page_nr_to_load){
     request_in_progress = true;
     var request = new XMLHttpRequest();
     // This request gets the next 20 images of the photostream
-    let url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=${page_nr}&format=json&nojsoncallback=1`;
+    let url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=${page_nr_to_load}&format=json&nojsoncallback=1`;
     request.open("GET", url, true);
-    // If the page should add 20 new placeholders do so, otherwise calculate how many placeholders are still needed and add those
-    addPlaceholderPhotosToDOM(should_fully_load ? 20 : total_photos - 20*(page_nr-1));
-    page_nr ++;
-    // Determine if the page should still add 20 new placeholders the next time this function is called
-    should_fully_load = 20*page_nr > total_photos ? false : true;
 
     request.onreadystatechange = function(){
         // If the request has been completely processed
@@ -69,7 +72,6 @@ function loadNextPhotosPage(){
                     return;
                 }
                 // Extract only the actually useful part of the response before sending it off to the next function
-                total_photos = RESPONSE.photos.total;
                 const PHOTOS = RESPONSE.photos.photo;
                 replacePlaceholderPhotos(PHOTOS);
             }
@@ -77,6 +79,8 @@ function loadNextPhotosPage(){
                 addFlickrLinkToDOM();
             }
             request_in_progress = false;
+            // After the request is done, trigger the event to load the next batch of images
+            document.getElementsByTagName("html")[0].dispatchEvent(request_done_event);
         }
     }
 
@@ -139,14 +143,15 @@ function observerCallback(events){
         if(event.isIntersecting){
             // If the right event has been triggered, delete the loading trigger and load the next batch of images
             // Only load images when the previous request has been completed
-            if(request_in_progress){
-                console.log("waiting")
-                setTimeout(() => void(0), 100);
-            } else{
-                console.log("executing");
-                event.target.remove();
-                loadNextPhotosPage();
-            }
+            event.target.remove();
+            request_queue.push(page_nr);
+            console.log(request_queue.length);
+            document.getElementsByTagName("html")[0].dispatchEvent(request_queue_element_event);
+            // Determine if the page should still add 20 new placeholders
+            should_fully_load = 20*page_nr > total_photos ? false : true;
+            // If the page should add 20 new placeholders do so, otherwise calculate how many placeholders are still needed and add those
+            addPlaceholderPhotosToDOM(should_fully_load ? 20 : total_photos - 20*(page_nr-1));
+            page_nr++;
         }
     });
 }
@@ -169,6 +174,17 @@ function replacePlaceholderPhotos(JSON_PHOTOS_ARRAY){
     }
 }
 
+async function handleImageLoading(){
+    console.log("hewwo");
+    if(request_queue.length > 0 && !request_in_progress){
+        loadNextPhotosPage(request_queue[0]);
+        request_queue.splice(0, 1);
+    }
+}
+
 window.onload = function(){
     loadPhotosOnPageLoad();
+    console.log("wow");
+    document.getElementsByTagName("html")[0].addEventListener(request_done_event, handleImageLoading);
+    document.getElementsByTagName("html")[0].addEventListener(request_queue_element_event, handleImageLoading);
 }
