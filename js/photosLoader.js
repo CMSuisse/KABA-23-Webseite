@@ -8,13 +8,10 @@ var page_nr = 2;
 var should_fully_load = true;
 // This variable will be set to its actual value later, but it has to be global, so here it is
 var total_photos;
-// This variable is used in the function to load the next batch of images
+// This variable is used to check if the function can load the next batch of images
 var request_in_progress = false;
 // This queue is used to only have one AJAX request at a time but to allow the user to still "load" new placeholders
 var request_queue = new Array();
-// These two events are used to call the function that loads the next batch of images
-let request_done_event = new Event("RequestDoneEvent");
-let request_queue_element_event = new CustomEvent("RequestQueueElementEvent");
 
 function loadPhotosOnPageLoad(){
     var request = new XMLHttpRequest();
@@ -46,7 +43,7 @@ function loadPhotosOnPageLoad(){
             console.log(request_queue.length);
             request_in_progress = false;
             // After the request is done, trigger the event to load the next batch of images
-            document.getElementsByTagName("html")[0].dispatchEvent(request_done_event);
+            window.dispatchEvent(new Event("RequestDoneEvent"));
         }
     }
 
@@ -80,7 +77,7 @@ function loadNextPhotosPage(page_nr_to_load){
             }
             request_in_progress = false;
             // After the request is done, trigger the event to load the next batch of images
-            document.getElementsByTagName("html")[0].dispatchEvent(request_done_event);
+            window.dispatchEvent(new Event("RequestDoneEvent"));
         }
     }
 
@@ -144,9 +141,9 @@ function observerCallback(events){
             // If the right event has been triggered, delete the loading trigger and load the next batch of images
             // Only load images when the previous request has been completed
             event.target.remove();
+            // Deposit the page number to be loaded in the request queue to be loaded as soon as any previous requests have been completed
             request_queue.push(page_nr);
-            console.log(request_queue.length);
-            document.getElementsByTagName("html")[0].dispatchEvent(request_queue_element_event);
+            window.dispatchEvent(new Event("RequestQueueElementEvent"));
             // Determine if the page should still add 20 new placeholders
             should_fully_load = 20*page_nr > total_photos ? false : true;
             // If the page should add 20 new placeholders do so, otherwise calculate how many placeholders are still needed and add those
@@ -175,7 +172,6 @@ function replacePlaceholderPhotos(JSON_PHOTOS_ARRAY){
 }
 
 async function handleImageLoading(){
-    console.log("hewwo");
     if(request_queue.length > 0 && !request_in_progress){
         loadNextPhotosPage(request_queue[0]);
         request_queue.splice(0, 1);
@@ -184,7 +180,6 @@ async function handleImageLoading(){
 
 window.onload = function(){
     loadPhotosOnPageLoad();
-    console.log("wow");
-    document.getElementsByTagName("html")[0].addEventListener(request_done_event, handleImageLoading);
-    document.getElementsByTagName("html")[0].addEventListener(request_queue_element_event, handleImageLoading);
+    window.addEventListener("RequestDoneEvent", handleImageLoading);
+    window.addEventListener("RequestQueueElementEvent", handleImageLoading);
 }
