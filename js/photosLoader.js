@@ -17,7 +17,7 @@ function loadPhotosOnPageLoad(){
     var request = new XMLHttpRequest();
     request_in_progress = true;
     // This request gets the first 20 images of the photostream
-    let url = "https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=1&format=json&nojsoncallback=1";
+    let url = "https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=197916688%40N02&extras=date_taken&per_page=20&page=1&format=json&nojsoncallback=1";
     request.open("GET", url, true);
     addPlaceholderPhotosToDOM(20);
 
@@ -53,7 +53,7 @@ function loadNextPhotosPage(page_nr_to_load){
     request_in_progress = true;
     var request = new XMLHttpRequest();
     // This request gets the next 20 images of the photostream
-    let url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=195536935%40N04&per_page=20&page=${page_nr_to_load}&format=json&nojsoncallback=1`;
+    let url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4e4799e62be89b33ab237d014bbb5267&user_id=197916688%40N02&extras=date_taken&per_page=20&page=${page_nr_to_load}&format=json&nojsoncallback=1`;
     request.open("GET", url, true);
 
     request.onreadystatechange = function(){
@@ -89,7 +89,7 @@ function addFlickrLinkToDOM(){
    // Only append the link to the flickr page when it hasn't already been added
    if(photos_info_div.children.length == 1){
        var link_el = document.createElement("a");
-       link_el.href = "https://www.flickr.com/photos/kaba2022/page1"
+       link_el.href = "https://flic.kr/ps/41TKmW"
        link_el.innerHTML = "KABA 2023 Flickr Photostream"
        var info_p = document.createElement("p");
        info_p.innerHTML = "Nicht alle Fotos konnten erfolgreich geladen werden. Schau doch sonst auf der Flickr Seite des KABAs vorbei: "
