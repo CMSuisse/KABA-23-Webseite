@@ -37,9 +37,6 @@ function loadPhotosOnPageLoad(){
                 const PHOTOS = RESPONSE.photos.photo;
                 replacePlaceholderPhotos(PHOTOS);
             }
-            else{
-                addFlickrLinkToDOM();
-            }
             request_in_progress = false;
             // After the request is done, trigger the event to load the next batch of images
             window.dispatchEvent(new Event("RequestDoneEvent"));
@@ -71,9 +68,6 @@ function loadNextPhotosPage(page_nr_to_load){
                 const PHOTOS = RESPONSE.photos.photo;
                 replacePlaceholderPhotos(PHOTOS);
             }
-            else{
-                addFlickrLinkToDOM();
-            }
             request_in_progress = false;
             // After the request is done, trigger the event to load the next batch of images
             window.dispatchEvent(new Event("RequestDoneEvent"));
@@ -81,22 +75,6 @@ function loadNextPhotosPage(page_nr_to_load){
     }
 
     request.send();
-}
-
-function addFlickrLinkToDOM(){
-   // When some or maybe all images couldn't load, add a link to the flickr photostream to the page
-   var photos_info_div = document.getElementById("fotos-info")
-   // Only append the link to the flickr page when it hasn't already been added
-   if(photos_info_div.children.length == 1){
-       var link_el = document.createElement("a");
-       link_el.href = "https://flic.kr/ps/41TKmW"
-       link_el.innerHTML = "KABA 2023 Flickr Photostream"
-       var info_p = document.createElement("p");
-       info_p.innerHTML = "Nicht alle Fotos konnten erfolgreich geladen werden. Schau doch sonst auf der Flickr Seite des KABAs vorbei: "
-       info_p.classList.add("text-center");
-       info_p.appendChild(link_el);
-       photos_info_div.appendChild(info_p);
-   }
 }
 
 function addPlaceholderPhotosToDOM(placeholder_nr){
