@@ -1,4 +1,2 @@
 Flickr API Key:
 4e4799e62be89b33ab237d014bbb5267
-Secret:
-47460c07ed51ecf9

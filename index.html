@@ -14,253 +14,256 @@
   </head>
 
   <body>
-    <!--This container is used to not mess up the document flow when the page loads, because the navbar is removed from the flow due to it having a fixed position-->
-    <div class="container" id="navbarContainer" style="height: 60px;">
-      <!--The navbar is always stuck to the top of the view port and collapses into a hamburger menu at the md breakpoint-->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
-        <a class="navbar-brand" href=""><img src="media/img/logo_light.svg" style="height: 60px;" alt="KABA 2023 Logo"></a>
-        <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="#navbarCollapse" aria-expanded="false" style="right: 10px;">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-white current" href=""><span>Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="html/infos.html"><span>Infos</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="html/team.html"><span>Über uns</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="html/specials.html"><span>Specials</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="html/fotos.html"><span>Fotos</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="insta-link" href="https://www.instagram.com/kaba.2023.gl"><i class="bi bi-instagram" style="width: 1em; height: 1em;"></i></a>
-            </li>
-          </ul>
+    <!--The site-wrapper is used to enable overflow-x: hidden to also work on mobile devices since mobile browsers ignore overflow-x when the <meta name="viewport"> tag is present (I'm sure there's a reason)-->
+    <div class="site-wrapper">
+      <!--This container is used to not mess up the document flow when the page loads, because the navbar is removed from the flow due to it having a fixed position-->
+      <div class="container" id="navbarContainer" style="height: 60px;">
+        <!--The navbar is always stuck to the top of the view port and collapses into a hamburger menu at the md breakpoint-->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
+          <a class="navbar-brand" href=""><img src="media/img/logo_light.svg" style="height: 60px;" alt="KABA 2023 Logo"></a>
+          <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="#navbarCollapse" aria-expanded="false" style="right: 10px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white current" href=""><span>Home</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="html/infos.html"><span>Infos</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="html/team.html"><span>Über uns</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="html/specials.html"><span>Specials</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="html/fotos.html"><span>Fotos</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="insta-link" href="https://www.instagram.com/kaba.2023.gl"><i class="bi bi-instagram" style="width: 1em; height: 1em;"></i></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <main class="mx-2 mx-md-5 index-main">
+        <!--Because the card system works quite well but the background for the logo should be black, this infocard just has the same background color as the body-->
+        <div class="info-card logo-card my-3 text-center">
+          <img class="img-fluid mx-auto d-block" src="media/img/logo_light.svg" alt="KABA 2023 Logo">
+          <h1 class="kaba-title">KABA 2023</h1>
+          <h2 class="kaba-date">28. April</h2>
         </div>
-      </nav>
+        <div class="info-card my-3 py-4 text-center">
+          <p class="m-0">
+            Das Ticket kostet 25 CHF. Wir bitten dich, dein Ticket oder deinen Einladungsbrief und deine ID mitzunehmen.
+          </p>  
+        </div>
+        <div class="info-card trailer-card">
+          <div class="embed-responsive embed-responsive d-flex" style="padding-top: 10px; padding-bottom: 10px;">
+            <video width="100%" poster="media/img/trailer_thumb.jpg" controls>
+              <source src="media/vid/trailer.MOV">
+            </video>
+          </div>
+        </div>
+        <div class="info-card my-3">
+          <h3>Acts</h3>
+          <hr>
+          <!--Using the bootstrap grid system to organise this section of the website-->
+          <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-md-2 my-2">
+              <div class="col text-center p-0">
+                <div class="image-wrapper-acts m-auto">
+                  <img class="act-image" src="media/img/kanti_band.jpg" alt="Foto der Kantiband">
+                  <div class="act-time">
+                    <h3 class="m-auto">21:30-22:00</h3>
+                  </div>
+                </div>
+                <h3 class="act-name">Kanti Band</h3>
+              </div>
+              <div class="col text-center p-0">
+                <div class="image-wrapper-acts m-auto">
+                  <img class="act-image" src="media/img/bliss_pills.jpg" alt="Foto der Band Bliss Pills">
+                  <div class="act-time">
+                    <h3 class="m-auto">22:00-23:00</h3>
+                  </div>
+                </div>
+                <h3 class="act-name">Bliss Pills</h3>
+              </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 my-2">
+              <div class="col text-center p-0">
+                <div class="image-wrapper-acts m-auto">
+                  <img class="act-image" src="media/img/fabreezy.jpg" alt="Foto des DJs Fabreezy">
+                  <div class="act-time">
+                    <h3 class="m-auto">23:00-1:00</h3>
+                  </div>
+                </div>
+                <h3 class="act-name">Fabreezy</h3>
+              </div>
+              <div class="col text-center p-0">
+                <div class="image-wrapper-acts m-auto">
+                  <img class="act-image" src="media/img/boybumba.jpg" alt="Foto des DJs Boybumbá">
+                  <div class="act-time">
+                    <h3 class="m-auto">1:00-3:00</h3>
+                  </div>
+                </div>
+                <h3 class="act-name">Boybumbá</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-card my-3">
+          <h3>Programm</h3>
+          <table class="table table-borderless table-hover time-table mb-0">
+            <thead style="color:#ffffff">
+              <tr>
+                <th>Event</th>
+                <th>Zeit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Türöffnung</td>
+                <td>19:30</td>
+              </tr>
+              <tr>
+                <td>Showblock</td>
+                <td>20:45</td>
+              </tr>
+              <tr>
+                <td>Kanti Band</td>
+                <td>21:30-22:00</td>
+              </tr>
+              <tr>
+                <td>Bliss Pills</td>
+                <td>22:00-23:00</td>
+              </tr>
+              <tr>
+                <td>Fabreezy</td>
+                <td>23:00-1:00</td>
+              </tr>
+              <tr>
+                <td>Boybumbá</td>
+                <td>1:00-3:00</td>
+              </tr>
+              <tr>
+                <td>Ende</td>
+                <td>3:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <!--The identical footer on all pages contains a quick list of sponsors, contact links and a quick imprint-->
+      <footer class="footer">
+        <!--Bootstrap grid go brrrrrrrr-->
+        <div class="container-fluid">
+          <div class="row pt-3">
+            <div class="col m-auto">
+              <h5 class="text-uppercase" style="text-align: center;">Hauptsponsoren</h5>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-auto sponsor-main mt-2 mb-2">
+              <a href="https://www.althauslegal.ch" target="_blank"><img src="media/img/sponsors/main_althaus_legal.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: Althaus Legal"></a>
+            </div>
+            <div class="col-auto sponsor-main mt-2 mb-2">
+              <a href="https://www.kfn.ch" target="_blank"><img src="media/img/sponsors/main_kfn.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: KFN"></a>
+            </div>
+            <div class="col-auto sponsor-main mt-2 mb-2">
+              <a href="https://www.raiffeisen.ch/rch/de.html" target="_blank"><img src="media/img/sponsors/main_raiffeisen.png" alt="Link zu der Webseite einer unserer Hauptsponsoren: Raiffeisen"></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col m-auto">
+              <h5 class="text-uppercase" style="text-align: center;">Co-Sponsoren</h5>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://www.seewache.ch" target="_blank"><img src="media/img/sponsors/co_seewache.PNG" alt="Link zu der Webseite einer unserer Co-Sponsoren: Seewache"></a>
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://thoma-werbetechnik.ch" target="_blank"><img src="media/img/sponsors/co_thoma.PNG" alt="Link zu der Webseite einer unserer Co-Sponsoren: Thoma"></a>
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://www.botty.ch" target="_blank"><img src="media/img/sponsors/co_botty.png" alt="Link zu der Webseite einer unserer Co-Sponsoren: Botty Schuhe"></a>
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://www.brauereiadler.ch" target="_blank"><img src="media/img/sponsors/co_adler_braeu.png" alt="Link zu der Webseite einer unserer Co-Sponsoren: Adler Bräu"></a>
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://linthstz.ch/" target="_blank"><img src="media/img/sponsors/co_linthstz.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Linth STZ"></a>
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://www.walhalla-weine.ch/startseite.html" target="_blank"><img src="media/img/sponsors/co_walhalla.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Walhalla"></a>
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <img src="media/img/sponsors/co_route.png" alt="Einer unserer Co-Sponsoren: Route 66 Bar">
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://goethe.swiss" target="_blank"><img src="media/img/sponsors/main_goethe.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Goethe"></a>
+            </div>
+            <div class="col-auto sponsor-co mt-2 mb-2">
+              <a href="https://baeschlinverlag.lesestoff.ch/de/home" target="_blank"><img src="media/img/sponsors/main_baeschlin.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Baeschlin"></a>
+            </div>
+          </div>
+          <div class="row row-cols-md-2 justify-content-center">
+            <div class="row row-cols-1">
+              <div class="col text-center">
+                <h5 class="text-uppercase">Weitere Sponsoren</h5>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://www.stm-ag.ch" target="_blank" class="text-white">Stöckli Metall AG</a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://www.tbglarus.ch" target="_blank" class="text-white">Technische Betriebe Glarus</a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://belvedere-am.com" target="_blank" class="text-white">Belvédère Asset Management AG</a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://glkb.ch" target="_blank" class="text-white">Glarner Kantonalbank</a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://service7000.ch/" target="_blank" class="text-white">Service 7000</a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://baeckerei-gabriel.ch/ueber-uns" target="_blank" class="text-white">Bäckerei Gabriel</a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://www.daetwyler-intercoiffure.ch" target="_blank" class="text-white">Dätwyler Intercoiffeure</a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="https://www.lintharena.ch" target="_blank" class="text-white">Lintharena AG</a>
+              </div>
+            </div>
+            <div class="row row-cols-1">
+              <div class="col text-center mt-2 mt-md-0">
+                <h5 class="text-uppercase">Kontakt</h5>
+                <div>
+                  <span>KABA Chefin: <a class="text-white" href="mailto: sarina.gaehwiler@stud.schulegl.ch">sarina.gaehwiler@stud.schulegl.ch</a></span>
+                  <br>
+                  <span>Insta: <a class="text-white" href="https://www.instagram.com/kaba.2023.gl" target="_blank">kaba.2023.gl</a></span>
+                  <br>
+                  <span>Webseite: <a class="text-white" href="mailto: cyrill.marti@stud.schulegl.ch">cyrill.marti@stud.schulegl.ch</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-1 justify-content-center mt-2 py-2 imprint">
+            <div class="col-auto text-center">
+              <span>Webseite von Cyrill Marti</span>
+              <br>
+              <span>Logo von Silja Marti</span>
+              <br>
+              <span>Foto der Kantiband von Leandra Tresch</span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <main class="mx-2 mx-md-5 index-main">
-      <!--Because the card system works quite well but the background for the logo should be black, this infocard just has the same background color as the body-->
-      <div class="info-card logo-card my-3 p-3 text-center">
-        <img class="img-fluid mx-auto d-block" src="media/img/logo_light.svg" alt="KABA 2023 Logo">
-        <h1 class="kaba-title">KABA 2023</h1>
-        <h2 class="kaba-date">28. April</h2>
-      </div>
-      <div class="info-card my-3 py-4 text-center">
-        <p class="m-0">
-          Das Ticket kostet 25 CHF. Wir bitten dich, dein Ticket oder deinen Einladungsbrief und deine ID mitzunehmen.
-        </p>  
-      </div>
-      <div class="info-card trailer-card">
-        <div class="embed-responsive embed-responsive d-flex" style="padding-top: 10px; padding-bottom: 10px;">
-          <video width="100%" poster="media/img/trailer_thumb.jpg" controls>
-            <source src="media/vid/trailer.MOV">
-          </video>
-        </div>
-      </div>
-      <div class="info-card my-3">
-        <h3>Acts</h3>
-        <hr>
-        <!--Using the bootstrap grid system to organise this section of the website-->
-        <div class="container-fluid pb-2">
-          <div class="row row-cols-1 row-cols-md-2 my-2">
-            <div class="col text-center p-0">
-              <div class="image-wrapper-acts m-auto">
-                <img class="act-image" src="media/img/kanti_band.jpg" alt="Foto der Kantiband">
-                <div class="act-time">
-                  <h3 class="m-auto">21:30-22:00</h3>
-                </div>
-              </div>
-              <h3 class="act-name">Kanti Band</h3>
-            </div>
-            <div class="col text-center p-0">
-              <div class="image-wrapper-acts m-auto">
-                <img class="act-image" src="media/img/bliss_pills.jpg" alt="Foto der Band Bliss Pills">
-                <div class="act-time">
-                  <h3 class="m-auto">22:00-23:00</h3>
-                </div>
-              </div>
-              <h3 class="act-name">Bliss Pills</h3>
-            </div>
-          </div>
-          <div class="row row-cols-1 row-cols-md-2 my-2">
-            <div class="col text-center p-0">
-              <div class="image-wrapper-acts m-auto">
-                <img class="act-image" src="media/img/fabreezy.jpg" alt="Foto des DJs Fabreezy">
-                <div class="act-time">
-                  <h3 class="m-auto">23:00-1:00</h3>
-                </div>
-              </div>
-              <h3 class="act-name">Fabreezy</h3>
-            </div>
-            <div class="col text-center p-0">
-              <div class="image-wrapper-acts m-auto">
-                <img class="act-image" src="media/img/boybumba.jpg" alt="Foto des DJs Boybumbá">
-                <div class="act-time">
-                  <h3 class="m-auto">1:00-3:00</h3>
-                </div>
-              </div>
-              <h3 class="act-name">Boybumbá</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info-card my-3 py-2">
-        <h3>Programm</h3>
-        <table class="table table-borderless table-hover time-table mb-0">
-          <thead style="color:#f2f2f2">
-            <tr>
-              <th>Event</th>
-              <th>Zeit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Türöffnung</td>
-              <td>19:30</td>
-            </tr>
-            <tr>
-              <td>Showblock</td>
-              <td>20:45</td>
-            </tr>
-            <tr>
-              <td>Kanti Band</td>
-              <td>21:30-22:00</td>
-            </tr>
-            <tr>
-              <td>Bliss Pills</td>
-              <td>22:00-23:00</td>
-            </tr>
-            <tr>
-              <td>Fabreezy</td>
-              <td>23:00-1:00</td>
-            </tr>
-            <tr>
-              <td>Boybumbá</td>
-              <td>1:00-3:00</td>
-            </tr>
-            <tr>
-              <td>Ende</td>
-              <td>3:00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-    <!--The identical footer on all pages contains a quick list of sponsors, contact links and a quick imprint-->
-    <footer class="footer">
-      <!--Bootstrap grid go brrrrrrrr-->
-      <div class="container-fluid">
-        <div class="row pt-3">
-          <div class="col m-auto">
-            <h5 class="text-uppercase" style="text-align: center;">Hauptsponsoren</h5>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-auto sponsor-main mt-2 mb-2">
-            <a href="https://www.althauslegal.ch" target="_blank"><img src="media/img/sponsors/main_althaus_legal.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: Althaus Legal"></a>
-          </div>
-          <div class="col-auto sponsor-main mt-2 mb-2">
-            <a href="https://www.kfn.ch" target="_blank"><img src="media/img/sponsors/main_kfn.jpg" alt="Link zu der Webseite einer unserer Hauptsponsoren: KFN"></a>
-          </div>
-          <div class="col-auto sponsor-main mt-2 mb-2">
-            <a href="https://www.raiffeisen.ch/rch/de.html" target="_blank"><img src="media/img/sponsors/main_raiffeisen.png" alt="Link zu der Webseite einer unserer Hauptsponsoren: Raiffeisen"></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col m-auto">
-            <h5 class="text-uppercase" style="text-align: center;">Co-Sponsoren</h5>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://www.seewache.ch" target="_blank"><img src="media/img/sponsors/co_seewache.PNG" alt="Link zu der Webseite einer unserer Co-Sponsoren: Seewache"></a>
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://thoma-werbetechnik.ch" target="_blank"><img src="media/img/sponsors/co_thoma.PNG" alt="Link zu der Webseite einer unserer Co-Sponsoren: Thoma"></a>
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://www.botty.ch" target="_blank"><img src="media/img/sponsors/co_botty.png" alt="Link zu der Webseite einer unserer Co-Sponsoren: Botty Schuhe"></a>
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://www.brauereiadler.ch" target="_blank"><img src="media/img/sponsors/co_adler_braeu.png" alt="Link zu der Webseite einer unserer Co-Sponsoren: Adler Bräu"></a>
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://linthstz.ch/" target="_blank"><img src="media/img/sponsors/co_linthstz.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Linth STZ"></a>
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://www.walhalla-weine.ch/startseite.html" target="_blank"><img src="media/img/sponsors/co_walhalla.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Walhalla"></a>
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <img src="media/img/sponsors/co_route.png" alt="Einer unserer Co-Sponsoren: Route 66 Bar">
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://goethe.swiss" target="_blank"><img src="media/img/sponsors/main_goethe.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Goethe"></a>
-          </div>
-          <div class="col-auto sponsor-co mt-2 mb-2">
-            <a href="https://baeschlinverlag.lesestoff.ch/de/home" target="_blank"><img src="media/img/sponsors/main_baeschlin.jpg" alt="Link zu der Webseite einer unserer Co-Sponsoren: Baeschlin"></a>
-          </div>
-        </div>
-        <div class="row row-cols-md-2 justify-content-center">
-          <div class="row row-cols-1">
-            <div class="col text-center">
-              <h5 class="text-uppercase">Weitere Sponsoren</h5>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://www.stm-ag.ch" target="_blank" class="text-white">Stöckli Metall AG</a>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://www.tbglarus.ch" target="_blank" class="text-white">Technische Betriebe Glarus</a>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://belvedere-am.com" target="_blank" class="text-white">Belvédère Asset Management AG</a>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://glkb.ch" target="_blank" class="text-white">Glarner Kantonalbank</a>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://service7000.ch/" target="_blank" class="text-white">Service 7000</a>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://baeckerei-gabriel.ch/ueber-uns" target="_blank" class="text-white">Bäckerei Gabriel</a>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://www.daetwyler-intercoiffure.ch" target="_blank" class="text-white">Dätwyler Intercoiffeure</a>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <a href="https://www.lintharena.ch" target="_blank" class="text-white">Lintharena AG</a>
-            </div>
-          </div>
-          <div class="row row-cols-1">
-            <div class="col text-center mt-2 mt-md-0">
-              <h5 class="text-uppercase">Kontakt</h5>
-              <div>
-                <span>KABA Chefin: <a class="text-white" href="mailto: sarina.gaehwiler@stud.schulegl.ch">sarina.gaehwiler@stud.schulegl.ch</a></span>
-                <br>
-                <span>Insta: <a class="text-white" href="https://www.instagram.com/kaba.2023.gl" target="_blank">kaba.2023.gl</a></span>
-                <br>
-                <span>Webseite: <a class="text-white" href="mailto: cyrill.marti@stud.schulegl.ch">cyrill.marti@stud.schulegl.ch</a></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row row-cols-1 justify-content-center mt-2 py-2 imprint">
-          <div class="col-auto text-center">
-            <span>Webseite von Cyrill Marti</span>
-            <br>
-            <span>Logo von Silja Marti</span>
-            <br>
-            <span>Foto der Kantiband von Leandra Tresch</span>
-          </div>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>
